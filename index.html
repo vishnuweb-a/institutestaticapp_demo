@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhya Ashram | IIT-JEE | NEET | Olympiad | Schooling - Hajipur, Bihar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== BASE STYLES & VARIABLES ===== */
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #d32f2f;
+            --accent-color: #ff9800;
+            --light-color: #f5f5f5;
+            --dark-color: #212121;
+            --text-color: #333;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --perspective: 1000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            background: linear-gradient(135deg, var(--secondary-color), #b71c1c);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), #0d1b6b);
+            transition: width 0.5s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.5);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #0d1b6b);
+        }
+
+        .btn-primary::before {
+            background: linear-gradient(135deg, var(--secondary-color), #b71c1c);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .announcement-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .announcement-bar a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .announcement-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            margin-right: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: rotateY(0);
+            transition: transform 1s ease;
+        }
+
+        .logo:hover img {
+            transform: rotateY(360deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo-sub {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            transition: width 0.4s ease;
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            color: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 200px 0 120px;
+            background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(26, 35, 126, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 152, 0, 0.1), transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(211, 47, 47, 0.1), transparent 50%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards 0.5s;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards 1s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== HIGHLIGHTS SECTION ===== */
+        .highlights {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .highlights::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231a237e' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            perspective: var(--perspective);
+        }
+
+        .highlight-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-icon {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover .highlight-icon {
+            transform: scale(1.2) rotateY(180deg);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .cofounders-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            perspective: var(--perspective);
+        }
+
+        .cofounder-card {
+            width: 320px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .cofounder-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .cofounder-img-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cofounder-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 1s ease;
+        }
+
+        .cofounder-card:hover .cofounder-img-container img {
+            transform: scale(1.1);
+        }
+
+        .cofounder-info {
+            padding: 30px;
+            text-align: center;
+            transform: translateZ(30px);
+        }
+
+        .cofounder-name {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .cofounder-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .cofounder-bio {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* ===== BRANCHES SECTION ===== */
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            perspective: var(--perspective);
+        }
+
+        .branch-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-15px) rotateY(10deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .branch-img {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .branch-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .branch-card:hover .branch-img img {
+            transform: scale(1.1);
+        }
+
+        .branch-content {
+            padding: 30px;
+        }
+
+        .branch-address {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== PROGRAMS SECTION ===== */
+        .programs {
+            background-color: var(--light-color);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            perspective: var(--perspective);
+        }
+
+        .program-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary-color), #0d1b6b);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1%, transparent 1%);
+            background-size: 20px 20px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        .program-body {
+            padding: 30px;
+            transform: translateZ(20px);
+        }
+
+        .program-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .program-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .program-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ===== FACULTY SECTION ===== */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            perspective: var(--perspective);
+        }
+
+        .faculty-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-15px) rotateY(-10deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .faculty-img {
+            height: 250px;
+            width: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faculty-img::before {
+            content: 'Faculty Photo';
+            position: absolute;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        .faculty-content {
+            padding: 25px;
+            transform: translateZ(20px);
+        }
+
+        .faculty-qualification {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* ===== ACHIEVEMENTS SECTION ===== */
+        .achievements {
+            background-color: var(--light-color);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            perspective: var(--perspective);
+        }
+
+        .achievement-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== GALLERY SECTION ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            perspective: var(--perspective);
+        }
+
+        .gallery-item {
+            height: 220px;
+            background-color: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .gallery-item:hover {
+            transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            perspective: var(--perspective);
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -20px;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover .author-img {
+            transform: rotateY(180deg);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            perspective: var(--perspective);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            background: linear-gradient(135deg, var(--primary-color), #0d1b6b);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+            transform: translateY(-5px);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .map-placeholder {
+            height: 350px;
+            background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+            border-radius: 15px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #616161;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            animation: mapLines 20s linear infinite;
+        }
+
+        @keyframes mapLines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(40px); }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), #000);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .footer-links h3, .footer-newsletter h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after, .footer-newsletter h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(10px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(135deg, var(--secondary-color), #b71c1c);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: linear-gradient(135deg, var(--primary-color), #0d1b6b);
+            transform: scale(1.1);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-10px) rotateY(360deg);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cofounders-container {
+                gap: 30px;
+            }
+            
+            .cofounder-card {
+                width: 280px;
+            }
+            
+            .cofounder-img-container {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 160px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .cofounders-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .cofounder-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .cofounder-img-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .cofounder-img-container {
+                height: 250px;
+            }
+            
+            .cofounder-info {
+                padding: 20px 15px;
+            }
+            
+            .cofounder-name {
+                font-size: 1.4rem;
+            }
+            
+            .testimonial-card {
+                padding: 25px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+                padding-left: 20px;
+            }
+            
+            .testimonial-text::before {
+                font-size: 3rem;
+                top: -15px;
+            }
+        }
+
+        /* ===== 3D ANIMATION CLASSES ===== */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .spin-animation {
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary-color), var(--secondary-color));
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--secondary-color), var(--primary-color));
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            🎉 Admission Open for 2024-25 Session | Limited Seats Available | <a href="#contact">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="vidhya3.jpg" alt="Vidhya Ashram Logo">
+                    <div class="logo-text">
+                        <span class="logo-main">Vidhya Ashram</span>
+                        <span class="logo-sub">IIT-JEE | NEET | Olympiad | Schooling</span>
+                    </div>
+                </a>
+                
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#branches">Branches</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#achievements">Results</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Vidhya Ashram Institute</h1>
+            <div class="hero-btns">
+                <a href="#programs" class="btn">Explore Programs</a>
+                <a href="#contact" class="btn btn-primary">Admission Enquiry</a>
+                <a href="#achievements" class="btn">Our Results</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="section highlights">
+        <div class="container">
+            <h2>Why Choose Vidhya Ashram?</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Consistent top ranks in IIT-JEE, NEET, and Olympiad exams</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Faculty</h3>
+                    <p>NIT/IIT alumni and experienced educators</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Comprehensive Curriculum</h3>
+                    <p>Covering School Boards + Competitive Exams</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Personalized Attention</h3>
+                    <p>Small batch sizes for individual focus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Vidhya Ashram</h2>
+            <div class="section-subtitle">
+                Established with a vision to provide quality education in Hajipur, Bihar, Vidhya Ashram has been transforming students' lives since its inception.
+            </div>
+            
+            <div class="about-content">
+                <div class="text-center mb-3">
+                    <h3>Our Mission</h3>
+                    <p>To provide comprehensive education that prepares students not only for academic excellence but also for life's challenges, with a focus on competitive exams and holistic development.</p>
+                </div>
+                
+                <div class="text-center">
+                    <h3>Co-Founders</h3>
+                    <div class="cofounders-container">
+                        <div class="cofounder-card">
+                            <div class="cofounder-img-container">
+                                <img src="amrangayssr.png" alt="Amranjay Singh">
+                            </div>
+                            <div class="cofounder-info">
+                                <h4 class="cofounder-name">Amranjay Singh</h4>
+                                <div class="cofounder-title">Co-Founder & Director</div>
+                                <p class="cofounder-bio">Visionary educator with expertise in competitive exam training and student mentorship.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cofounder-card">
+                            <div class="cofounder-img-container">
+                                <img src="chandrasr.png.jpeg" alt="Chandra Rangapi">
+                            </div>
+                            <div class="cofounder-info">
+                                <h4 class="cofounder-name">Chandra Rangapi</h4>
+                                <div class="cofounder-title">Co-Founder & Academic Head (NIT Alumni)</div>
+                                <p class="cofounder-bio">NIT alumnus with deep understanding of engineering entrance exams and curriculum design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="section" id="branches">
+        <div class="container">
+            <h2>Our Branches</h2>
+            <div class="section-subtitle">
+                We have two conveniently located branches in Vaishali district to serve students better
+            </div>
+            
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <div class="branch-img">
+                        <img src="vsd.jpeg" alt="Main Branch">
+                    </div>
+                    <div class="branch-content">
+                        <h3>Main Branch</h3>
+                        <div class="branch-address">Sita Chowk, Hajipur, Vaishali, Bihar</div>
+                        <p>Our flagship center with state-of-the-art facilities, digital classrooms, and library. This branch offers all programs from schooling to competitive exam coaching.</p>
+                        <a href="#contact" class="btn">Visit This Branch</a>
+                    </div>
+                </div>
+                
+                <div class="branch-card">
+                    <div class="branch-img">
+                        <img src="pakauli.png" alt="Second Branch">
+                    </div>
+                    <div class="branch-content">
+                        <h3>Second Branch</h3>
+                        <div class="branch-address">Paukauli, Bidupur, Vaishali, Bihar</div>
+                        <p>Newly established branch with modern infrastructure, dedicated to serving students in the Bidupur region with the same quality education as our main branch.</p>
+                        <a href="#contact" class="btn">Visit This Branch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section programs" id="programs">
+        <div class="container">
+            <h2>Our Programs</h2>
+            <div class="section-subtitle">
+                Comprehensive educational programs designed for academic excellence
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>IIT-JEE Foundation</h3>
+                        <p>Classes 9-12</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Complete preparation for JEE Main & Advanced with integrated school syllabus.</p>
+                        <ul class="program-features">
+                            <li>Regular tests & performance analysis</li>
+                            <li>Doubt clearing sessions</li>
+                            <li>Study material & question banks</li>
+                            <li>Mock test series</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>NEET Preparation</h3>
+                        <p>Classes 11-12</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Comprehensive NEET coaching with biology focus and regular revisions.</p>
+                        <ul class="program-features">
+                            <li>Biology specialization classes</li>
+                            <li>NCERT based teaching</li>
+                            <li>Regular mock tests</li>
+                            <li>Dedicated doubt sessions</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Olympiad & NTSE</h3>
+                        <p>Classes 6-10</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Specialized training for Science & Math Olympiads, KVPY, and NTSE.</p>
+                        <ul class="program-features">
+                            <li>Concept building classes</li>
+                            <li>Problem solving techniques</li>
+                            <li>Previous year papers analysis</li>
+                            <li>Regular practice tests</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Board Preparation</h3>
+                        <p>Classes 9-12</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Focused classes for CBSE & Bihar Board exams with guaranteed performance.</p>
+                        <ul class="program-features">
+                            <li>Syllabus completion before time</li>
+                            <li>Revision & practice sessions</li>
+                            <li>Sample paper solving</li>
+                            <li>Personalized attention</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="section" id="faculty">
+        <div class="container">
+            <h2>Our Faculty</h2>
+            <div class="section-subtitle">
+                Learn from the best educators with proven track records
+            </div>
+            
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <!-- Physics Faculty Photo -->
+                    </div>
+                    <div class="faculty-content">
+                        <h4>Physics Department</h4>
+                        <div class="faculty-qualification">IIT/NIT Alumni & Experienced Educators</div>
+                        <p>Expert faculty with deep conceptual understanding and innovative teaching methodologies.</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <!-- Chemistry Faculty Photo -->
+                    </div>
+                    <div class="faculty-content">
+                        <h4>Chemistry Department</h4>
+                        <div class="faculty-qualification">M.Sc. & Ph.D. Holders</div>
+                        <p>Specialized in Organic, Inorganic and Physical Chemistry with focus on competitive exams.</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <!-- Mathematics Faculty Photo -->
+                    </div>
+                    <div class="faculty-content">
+                        <h4>Mathematics Department</h4>
+                        <div class="faculty-qualification">B.Tech/M.Sc. from Premier Institutes</div>
+                        <p>Experts in problem-solving techniques and shortcut methods for JEE & Olympiads.</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <!-- Biology Faculty Photo -->
+                    </div>
+                    <div class="faculty-content">
+                        <h4>Biology Department</h4>
+                        <div class="faculty-qualification">M.Sc. Life Sciences & MBBS</div>
+                        <p>NEET specialists with focus on NCERT and advanced biological concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements/Results Section -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <h2>Our Achievements</h2>
+            <div class="section-subtitle">
+                Consistent excellence in competitive exams and board results
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">150+</div>
+                    <h3>JEE Selections</h3>
+                    <p>Students selected in IITs & NITs</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">200+</div>
+                    <h3>NEET Qualifiers</h3>
+                    <p>Medical entrance success stories</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">50+</div>
+                    <h3>NTSE Scholars</h3>
+                    <p>National Talent Search qualifiers</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">100+</div>
+                    <h3>Olympiad Winners</h3>
+                    <p>National & International level</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <h3>Toppers' Gallery</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="topper_1.jpeg" alt="Topper 1"></div>
+                    <div class="gallery-item"><img src="topper_3.jpeg" alt="Topper 2"></div>
+                    <div class="gallery-item"><img src="topper_4.jpeg" alt="Topper 3"></div>
+                    <div class="gallery-item"><img src="topper_5.jpeg" alt="Topper 4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Campus Life</h2>
+            <div class="section-subtitle">
+                Experience our infrastructure and student activities
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="v_1.jpeg" alt="Campus Life 1"></div>
+                <div class="gallery-item"><img src="v_2.jpeg" alt="Campus Life 2"></div>
+                <div class="gallery-item"><img src="v_3.jpeg" alt="Campus Life 3"></div>
+                <div class="gallery-item"><img src="v_4.jpeg" alt="Campus Life 4"></div>
+                <div class="gallery-item"><img src="v_8.jpeg" alt="Campus Life 5"></div>
+                <div class="gallery-item"><img src="v_9.jpeg" alt="Campus Life 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2>Student Testimonials</h2>
+            <div class="section-subtitle">
+                Hear from our successful students and their parents
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Vidhya Ashram's integrated approach helped me balance school and NEET preparation. The faculty's guidance was instrumental in my NEET selection."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"><img src="NEETPIC.jpeg" alt="Abhishek Kumar"></div>
+                        <div>
+                            <h4>ABHISHEK KUMAR</h4>
+                            <p>P.M.C.H. PATNA, 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="section-subtitle">
+                Get in touch for admission enquiries, fee structure, or any questions
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Main Branch</h4>
+                            <p>Sita Chowk, Hajipur, Vaishali, Bihar - 844101</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Second Branch</h4>
+                            <p>Paukauli, Bidupur, Vaishali, Bihar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>+91 7352776759 (Hajipur Branch)<br>+91 8540884626 (Bidupur Branch)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@vidhyaashram.com<br>admissions@vidhyaashram.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Saturday: 8:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Admission Enquiry Form</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Student's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Parent's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Current Class" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Select Program Interested In</option>
+                                <option value="jee">IIT-JEE Foundation</option>
+                                <option value="neet">NEET Preparation</option>
+                                <option value="olympiad">Olympiad/NTSE</option>
+                                <option value="board">Board Preparation</option>
+                                <option value="school">School Coaching</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message or Query" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-placeholder">
+                [Google Map Embed - Location: Sita Chowk, Hajipur, Vaishali, Bihar]
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Vidhya <span>Ashram</span></div>
+                    <p>Hajipur's leading institute for IIT-JEE, NEET, Olympiad, and Board exam preparation. Transforming education in Bihar since inception.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#branches">Our Branches</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#achievements">Results</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Fee Structure</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#programs">IIT-JEE Foundation</a></li>
+                        <li><a href="#programs">NEET Preparation</a></li>
+                        <li><a href="#programs">Olympiad & NTSE</a></li>
+                        <li><a href="#programs">Board Preparation</a></li>
+                        <li><a href="#programs">School Coaching</a></li>
+                        <li><a href="#programs">Summer Crash Courses</a></li>
+                        <li><a href="#programs">Weekend Batches</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates on admission dates, topper interviews, and exam tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Vidhya Ashram Institute, Hajipur, Bihar. All Rights Reserved.</p>
+                <p>Designed for excellence in competitive and school education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const header = document.getElementById('main-header');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+        
+        // Header hide/show on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('hidden')) {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add animation to button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #388E3C)';
+            
+            setTimeout(() => {
+                alert('Thank you for your enquiry! We will contact you within 24 hours.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+            }, 1000);
+        });
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            const submitBtn = this.querySelector('button');
+            const originalHTML = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check"></i>';
+            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #388E3C)';
+            
+            setTimeout(() => {
+                alert(`Thank you for subscribing with email: ${email}`);
+                this.reset();
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.style.background = '';
+            }, 1000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add floating animation to some elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.highlight-card, .cofounder-card, .branch-card, .program-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.zIndex = '100';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.zIndex = '1';
+                });
+            });
+            
+            // Add animation to achievement numbers
+            const achievementNumbers = document.querySelectorAll('.achievement-number');
+            achievementNumbers.forEach(number => {
+                const target = parseInt(number.textContent);
+                let current = 0;
+                const increment = target / 50;
+                
+                const updateNumber = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (current > target) current = target;
+                        number.textContent = Math.floor(current) + '+';
+                        setTimeout(updateNumber, 30);
+                    }
+                };
+                
+                // Start animation when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateNumber();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(number);
+            });
+        });
+        
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .highlight-card, .cofounder-card');
+            
+            parallaxElements.forEach(el => {
+                const rate = scrolled * 0.5;
+                el.style.transform = `translateY(${rate}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
